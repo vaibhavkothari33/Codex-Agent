@@ -10,11 +10,9 @@ An intelligent AI agent built with Node.js and OpenAI's GPT-4.1-mini model that 
 - **Tool Usage:** Can execute shell commands, read/write files, do math, and fetch mock weather info.
 - **Structured JSON Responses:** The agent strictly follows a JSON format for communication.
 - **Extensible Tools:** Easily add new tools to the agent.
-- **Environment Config:** Uses `.env` for storing API keys securely.
-- **OpenAI API Usage Checker:** Includes a script to check OpenAI API key quota and usage.
 
 ---
-
+<!-- 
 ## Getting Started
 
 ### Prerequisites
@@ -130,4 +128,4 @@ MIT License © Vaibhav Kothari
 ---
 
 Feel free to open issues or contribute! 🚀
-
+ -->
