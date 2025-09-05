@@ -138,7 +138,6 @@ async function init() {
     ];
 
     // const userQuries = "What is the weather of greater noida and delhi";
-    // const userQuries = "create a portfolio website using react js vite for vaibhav kothari get more info about it by searching him his username is vaibhavkothari33 please make it ui more better";
     const userQuries = "What is in my index.html of video-site modify it and add 5 more video in it and also nice css to buttons and add mor interactions";
     messages.push({ "role": "user", "content": userQuries })
 
