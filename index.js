@@ -55,6 +55,8 @@ async function readFile({ filepath }) {
         return `❌ Could not read file "${filepath}": ${error.message}`;
     }
 }
+
+
 const TOOLS_MAP = {
     getWeatherInfo: getWeatherInfo,
     getSum: getSum,
@@ -138,7 +140,9 @@ async function init() {
     ];
 
     // const userQuries = "What is the weather of greater noida and delhi";
-    const userQuries = "What is in my index.html of video-site modify it and add 5 more video in it and also nice css to buttons and add mor interactions";
+    const userQuries = "please have a look at the image.png in the root folder and please make a html css js page like that in new folder rember i am in windows make sure what commage to run if not possible give me rhe code of a new tool that will do the work like something orc type and make the change in index js"
+    // const userQuries = "write a basic todo application crud api in go lang  for todo app in a new folder and make proper code structure as per production based even incliude go.mod file"
+    // const userQuries = "What is in my index.html of video-site modify it and add 5 more video in it and also nice css to buttons and add mor interactions";
     messages.push({ "role": "user", "content": userQuries })
 
     while (true) {

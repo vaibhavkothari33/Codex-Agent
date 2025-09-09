@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pranjal Srivastava Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <h1>Pranjal Srivastava</h1>
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Pranjal Srivastava, a passionate web developer eager to create amazing user experiences through innovative and elegant design.</p>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="accordion">
+      <button class="accordion-btn">Project 1: Portfolio Website</button>
+      <div class="panel">
+        <p>A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my work.</p>
+      </div>
+      <button class="accordion-btn">Project 2: Todo App</button>
+      <div class="panel">
+        <p>A simple and efficient todo list web application to keep track of tasks.</p>
+      </div>
+      <button class="accordion-btn">Project 3: Weather App</button>
+      <div class="panel">
+        <p>A weather forecasting app using real-time API data for accurate weather reports.</p>
+      </div>
+    </div>
+  </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML5 & CSS3</li>
+      <li>JavaScript (ES6+)</li>
+      <li>Responsive Web Design</li>
+      <li>React & Vue Fundamentals</li>
+      <li>Git & Version Control</li>
+    </ul>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="form-response"></p>
+  </section>
+</main>
+<footer>
+  <p>© 2024 Pranjal Srivastava</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
