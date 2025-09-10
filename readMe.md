@@ -11,41 +11,15 @@
 
 A powerful, modular AI coding assistant that supports multiple AI models with an intuitive terminal interface. Built with modern JavaScript and designed for developers who love clean, maintainable code.
 
-## ✨ ASCII Art Generation
-
-The beautiful ASCII header is generated using figlet with this code pattern:
-
-```javascript
-try {
-    const asciiArt = await new Promise((resolve, reject) => {
-        figlet.text('CODEX AI ', {
-            font: 'ANSI Shadow',
-            horizontalLayout: 'fitted'
-        }, (err, data) => {
-            if (err) reject(err);
-            else resolve(data);
-        });
-    });
-    
-    console.log(chalk.cyan(asciiArt));
-} catch (error) {
-    // Fallback display
-    console.log(chalk.cyan.bold('🚀 CODEX AI - Advanced Coding Assistant'));
-}
-```
 
 ## 🚀 Features
 
-- **🤖 Multi-Model AI Support**: Switch between OpenAI GPT-4o Mini and Google Gemini 2.0 Flash
-- **⚛️ React.js Specialist**: Expert in React development with TypeScript, hooks, and modern patterns
-- **🌐 Web Scraping**: Clone and convert websites to React projects automatically
-- **🔧 Git Integration**: Complete version control workflow (add, commit, push)
-- **📁 File Operations**: Create, read, update, delete files and directories
-- **🎨 Beautiful Terminal UI**: ASCII art header with colorful, intuitive interface
-- **⚡ Smart Responses**: Instant responses for common queries without API calls
-- **🏗️ Project Scaffolding**: Automatically creates organized project structures
-- **🔄 Modular Architecture**: Clean, maintainable, and extensible codebase
-- **⌨️ Interactive CLI**: Arrow key navigation and modern terminal experience
+- **Multi-Model Support**: Switch between OpenAI GPT-4o Mini and Google Gemini 2.0 Flash
+- **Arrow Key Navigation**: Modern CLI interface for model selection
+- **Comprehensive Tools**: File operations, Git commands, package management, and more
+- **Smart Responses**: Quick responses for common queries without API calls
+- **Project Scaffolding**: Automatically creates projects in organized folders
+- **Modular Architecture**: Clean, maintainable codebase
 
 
 
