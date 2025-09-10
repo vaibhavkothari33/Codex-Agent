@@ -1,131 +1,123 @@
-# Codex Agent — Tool-Using AI Assistant
+# CODEX AI - Advanced Coding Assistant
 
-An intelligent AI agent built with Node.js and OpenAI's GPT-4.1-mini model that can reason, plan, and execute real-world tasks by calling tools such as shell commands, file operations, and more. This project demonstrates building a **structured reasoning agent** using the START → THINK → ACTION → OBSERVE → OUTPUT loop.
+A powerful, modular AI coding assistant that supports multiple AI models with an intuitive terminal interface.
 
----
+## 🚀 Features
 
-## Features
-
-- **Multi-step Reasoning:** The AI agent THINKs multiple times before acting.
-- **Tool Usage:** Can execute shell commands, read/write files, do math, and fetch mock weather info.
-- **Structured JSON Responses:** The agent strictly follows a JSON format for communication.
-- **Extensible Tools:** Easily add new tools to the agent.
-
----
-<!-- 
-## Getting Started
-
-### Prerequisites
-
-- Node.js v18 or later (ESM support)
-- An OpenAI API key with billing enabled
-- Windows OS (current shell commands are Windows-specific)
-
-### Setup
-
-1. Clone this repository:
-
-```bash
-   git clone https://github.com/vaibhavkothari33/codex-agent.git
-   cd codex-agent
-```
-
-2. Install dependencies:
-
-```bash
-   pnpm install
-```
-
-3. Create a `.env` file in the root directory with your OpenAI API key:
-
-```env
-   OPEN_AI_KEY=your_openai_api_key_here
-```
+- **Multi-Model Support**: Switch between OpenAI GPT-4o Mini and Google Gemini 2.0 Flash
+- **Arrow Key Navigation**: Modern CLI interface for model selection
+- **Comprehensive Tools**: File operations, Git commands, package management, and more
+- **Smart Responses**: Quick responses for common queries without API calls
+- **Project Scaffolding**: Automatically creates projects in organized folders
+- **Modular Architecture**: Clean, maintainable codebase
 
 
 
-## Usage
+## 🎯 Usage
 
-### Run the AI Agent
+### Commands
+- `exit` / `quit` - End session
+- `clear` - Clear screen and refresh header
+- `help` - Show available commands and examples
+- `model` - Switch between AI models (arrow key navigation)
 
-This agent runs a chat loop where it receives a user query, reasons about it, executes tools if needed, and outputs the final answer.
+### Example Queries
+- "Create a React todo app with TypeScript"
+- "Set up a Node.js API with Express"
+- "Debug this JavaScript function"
+- "Install and configure ESLint"
+- "Create a Git repository and make first commit"
 
-```bash
-node index.js
-or
-pnpm dev
-```
+### Simple Responses
+CODEX responds instantly to common queries without API calls:
+- "hello", "hi", "hey"
+- "thanks", "thank you"
+- "what can you do", "capabilities"
+- "good morning", "good afternoon", etc.
 
-You can modify the initial user query in `index.js` on line \~57:
+## 🔧 Available Tools
 
-```js
-const userQuries = "Create a new folder and in it write html css code for the todo application fully working";
-```
+### Development Tools
+- `writeFile` - Create/update files with content
+- `readFile` - Read file contents
+- `deleteFile` - Delete files
+- `listDirectory` - List directory contents
+- `createDirectory` - Create directories
+- `getFileInfo` - Get file metadata and stats
 
-### Tools Available
+### Search & Analysis
+- `searchInFiles` - Search for patterns in files
+- `executeCommand` - Execute terminal commands
 
-* `getWeatherInfo(city: string): string`
-  Returns weather info for a city (mock data).
+### Package Management
+- `installPackage` - Install npm packages
+- `runTests` - Run test suites
 
-* `executeCommand(command: string): string`
-  Runs a shell command on your Windows machine and returns the output.
+### Version Control
+- `gitCommand` - Execute git commands
 
-* `getSum({ a: number, b: number }): number`
-  Adds two numbers.
+### Utilities
+- `getWeatherInfo` - Get weather information
+- `getSum` - Mathematical operations
 
-* `readFile({ filepath: string }): string`
-  Reads the contents of a file (added for better Windows shell compatibility).
+## 🤖 Supported AI Models
 
-* `writeFile({ filepath: string, content: string }): string`
-  Writes content to a file (planned/optional).
+### OpenAI GPT-4o Mini 🤖
+- Fast and efficient
+- Excellent for coding tasks
+- JSON response format support
 
----
+### Google Gemini 2.5 Flash ✨
+- Latest experimental model
+- Advanced reasoning capabilities
+- Multimodal support
 
-## How It Works
+## 🏗️ Architecture Benefits
 
-The AI follows this loop:
+### Modular Design
+- **Separation of Concerns**: Each module has a specific responsibility
+- **Easy Maintenance**: Changes are isolated to relevant modules
+- **Scalability**: Easy to add new features and tools
+- **Testing**: Individual modules can be tested independently
 
-1. **START:** User query is sent.
-2. **THINK:** Agent thinks deeply, multiple times.
-3. **ACTION:** Agent decides to call a tool if needed.
-4. **OBSERVE:** Agent receives tool output.
-5. **OUTPUT:** Agent generates final answer.
+### Clean Code Principles
+- **Single Responsibility**: Each file/function has one clear purpose
+- **DRY (Don't Repeat Yourself)**: Shared functionality is centralized
+- **Readable**: Clear naming and organization
+- **Extensible**: Easy to add new AI models, tools, or UI components
 
-The AI strictly responds in JSON format to communicate these steps and tool calls clearly.
+## 🔄 Adding New Features
 
+### Adding a New Tool
+1. Create the tool function in the appropriate file in `src/tools/`
+2. Export it from the tool module
+3. It will automatically be available to the AI
 
+### Adding a New AI Model
+1. Add model configuration to `src/config/models.js`
+2. Implement the API call in `src/ai/processor.js`
+3. Update the model selector choices
 
-## How to Extend
+### Adding New UI Components
+1. Add display functions to `src/ui/display.js`
+2. Import and use in the main application flow
 
-* **Add new tools:** Add functions and update `TOOLS_MAP` in `index.js`.
-* **Improve reasoning:** Enhance the system prompt to add more complex planning steps.
-* **Multi-turn conversation:** Build a CLI interface to accept ongoing user inputs.
-* **Safety guards:** Add filters to prevent dangerous shell commands.
-* **Cross-platform support:** Add shell command compatibility for Linux/macOS.
+## 📝 Development
 
----
+The modular structure makes development easier:
 
-## Troubleshooting
+- **Hot Reloading**: Use `npm run dev` for development with auto-restart
+- **Debugging**: Each module can be debugged independently
+- **Code Organization**: Related functionality is grouped together
+- **Import/Export**: Clean ES6 module system throughout
 
-* Ensure `.env` file exists with correct `OPEN_AI_KEY`.
-* Use Node.js v18+ with native ES Modules support.
-* On Windows, use compatible shell commands (`type`, `dir`).
-* For missing packages, run `npm install node-fetch` or other dependencies.
+## 🚀 Performance
 
----
-
-## License
-
-MIT License © Vaibhav Kothari
-
----
-
-## Acknowledgments
-
-* [OpenAI API](https://platform.openai.com/)
-* Inspired by agent architectures like ReAct and LangChain
+- **Lazy Loading**: Modules are loaded only when needed
+- **Efficient Caching**: Model configurations and responses are cached
+- **Minimal Dependencies**: Only essential packages are included
+- **Fast Startup**: Optimized initialization process
 
 ---
 
-Feel free to open issues or contribute! 🚀
- -->
+**Built with ❤️ for developers who love clean, maintainable code!**

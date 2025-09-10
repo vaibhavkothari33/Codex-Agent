@@ -12,7 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "chalk": "^5.3.0",
     "dotenv": "^17.2.2",
+    "figlet": "^1.9.1",
+    "inquirer": "^12.9.4",
     "node-fetch": "^3.3.2",
     "openai": "^5.19.1",
     "tesseract.js": "^6.0.1"
