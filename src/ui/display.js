@@ -72,15 +72,22 @@ export function printSimpleResponse(response) {
 }
 
 export function printWelcome() {
-    console.log(chalk.green('🎯 Welcome to CODEX AI - Your Advanced Coding Assistant!'));
+    console.log(chalk.green('🎯 Welcome to CODEX AI'));
     console.log();
-    console.log(chalk.cyan('🚀 What I can help you with:'));
-    console.log(chalk.white('   • Full-stack development & project scaffolding'));
-    console.log(chalk.white('   • Code analysis, debugging & optimization'));
-    console.log(chalk.white('   • Package management & dependency handling'));
-    console.log(chalk.white('   • Git operations & version control'));
-    console.log(chalk.white('   • Testing & quality assurance'));
-    console.log(chalk.white('   • File system operations & project management'));
+    console.log(chalk.cyan('⚛️ Web Development:'));
+    console.log(chalk.white('   • Create React projects with TypeScript & Tailwind CSS'));
+    console.log(chalk.white('   • Modern component architecture & best practices'));
+    console.log(chalk.white('   • Responsive design & accessibility standards'));
+    console.log();
+    console.log(chalk.cyan('🌐 Web Scraping & Cloning:'));
+    console.log(chalk.white('   • Clone any website and convert to React'));
+    console.log(chalk.white('   • Extract layouts, styles, and components'));
+    console.log(chalk.white('   • Professional project structure & organization'));
+    console.log();
+    console.log(chalk.cyan('🛠️ Development Tools:'));
+    console.log(chalk.white('   • Run dev servers, build for production'));
+    console.log(chalk.white('   • Git operations & deployment setup'));
+    console.log(chalk.white('   • Code analysis & optimization'));
     console.log();
     console.log(chalk.gray('💡 Commands: "exit", "quit", "clear", "help", "model"'));
     console.log(chalk.gray('─'.repeat(60)));
@@ -94,11 +101,20 @@ export function printHelp() {
     console.log(chalk.white('   • help - Show this help'));
     console.log(chalk.white('   • model - Switch AI model'));
     console.log();
-    console.log(chalk.cyan('🛠️ Example Queries:'));
-    console.log(chalk.white('   • "Create a React todo app with TypeScript"'));
-    console.log(chalk.white('   • "Debug this JavaScript function"'));
-    console.log(chalk.white('   • "Set up a Node.js API with Express"'));
-    console.log(chalk.white('   • "Install and configure ESLint"'));
+    console.log(chalk.cyan('⚛️ React Development Examples:'));
+    console.log(chalk.white('   • "Create a React dashboard project"'));
+    console.log(chalk.white('   • "Build a todo app with TypeScript"'));
+    console.log(chalk.white('   • "Create a landing page with Tailwind CSS"'));
+    console.log(chalk.white('   • "Run the development server"'));
+    console.log();
+    console.log(chalk.cyan('🌐 Web Scraping Examples:'));
+    console.log(chalk.white('   • "Clone the UI of https://tailwindui.com"'));
+    console.log(chalk.white('   • "Scrape vaibhavkothari.me and make a React version"'));
+    console.log(chalk.white('   • "Convert this website to a React app: [URL]"'));
+    console.log();
+    console.log(chalk.cyan('🛠️ General Development:'));
+    console.log(chalk.white('   • "Set up ESLint and Prettier"'));
     console.log(chalk.white('   • "Create a Git repository and make first commit"'));
+    console.log(chalk.white('   • "Build the project for production"'));
     console.log();
 }
