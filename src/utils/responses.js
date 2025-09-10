@@ -41,11 +41,11 @@ export function getSimpleResponse(query) {
         return simpleResponses[lowerQuery];
     }
 
-    // Check for partial matches
-    for (const [key, response] of Object.entries(simpleResponses)) {
-        if (lowerQuery.includes(key)) {
-            return response;
-        }
+    // Check for greeting-only queries (avoid matching programming requests)
+    const greetingOnlyQueries = ['hello', 'hi', 'hey', 'thanks', 'thank you', 'how are you', 'good morning', 'good afternoon', 'good evening', 'good night'];
+    
+    if (greetingOnlyQueries.includes(lowerQuery)) {
+        return simpleResponses[lowerQuery];
     }
 
     return null; // No simple response found

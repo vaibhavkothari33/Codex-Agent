@@ -6,7 +6,7 @@ export async function printHeader() {
     console.clear();
     try {
         const asciiArt = await new Promise((resolve, reject) => {
-            figlet.text('CODEX AI', {
+            figlet.text('CODEX AI ', {
                 font: 'ANSI Shadow',
                 horizontalLayout: 'fitted'
             }, (err, data) => {

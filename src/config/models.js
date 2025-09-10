@@ -9,10 +9,10 @@ export const availableModels = {
         description: 'Fast and efficient OpenAI model'
     },
     'gemini-2.5-flash': {
-        name: 'Gemini 2.5 Flash',
+        name: 'Gemini 2.0 Flash',
         provider: 'Google',
         icon: '✨',
-        description: 'Google\'s latest model'
+        description: 'Google\'s latest experimental model'
     }
 };
 
