@@ -1,15 +1,51 @@
+```
+ ██████╗ ██████╗ ██████╗ ███████╗██╗  ██╗     █████╗ ██╗ 
+██╔════╝██╔═══██╗██╔══██╗██╔════╝╚██╗██╔╝    ██╔══██╗██║ 
+██║     ██║   ██║██║  ██║█████╗   ╚███╔╝     ███████║██║ 
+██║     ██║   ██║██║  ██║██╔══╝   ██╔██╗     ██╔══██║██║ 
+╚██████╗╚██████╔╝██████╔╝███████╗██╔╝ ██╗    ██║  ██║██║ 
+ ╚═════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝  ╚═╝╚═╝ 
+```
+
 # CODEX AI - Advanced Coding Assistant
 
-A powerful, modular AI coding assistant that supports multiple AI models with an intuitive terminal interface.
+A powerful, modular AI coding assistant that supports multiple AI models with an intuitive terminal interface. Built with modern JavaScript and designed for developers who love clean, maintainable code.
+
+## ✨ ASCII Art Generation
+
+The beautiful ASCII header is generated using figlet with this code pattern:
+
+```javascript
+try {
+    const asciiArt = await new Promise((resolve, reject) => {
+        figlet.text('CODEX AI ', {
+            font: 'ANSI Shadow',
+            horizontalLayout: 'fitted'
+        }, (err, data) => {
+            if (err) reject(err);
+            else resolve(data);
+        });
+    });
+    
+    console.log(chalk.cyan(asciiArt));
+} catch (error) {
+    // Fallback display
+    console.log(chalk.cyan.bold('🚀 CODEX AI - Advanced Coding Assistant'));
+}
+```
 
 ## 🚀 Features
 
-- **Multi-Model Support**: Switch between OpenAI GPT-4o Mini and Google Gemini 2.0 Flash
-- **Arrow Key Navigation**: Modern CLI interface for model selection
-- **Comprehensive Tools**: File operations, Git commands, package management, and more
-- **Smart Responses**: Quick responses for common queries without API calls
-- **Project Scaffolding**: Automatically creates projects in organized folders
-- **Modular Architecture**: Clean, maintainable codebase
+- **🤖 Multi-Model AI Support**: Switch between OpenAI GPT-4o Mini and Google Gemini 2.0 Flash
+- **⚛️ React.js Specialist**: Expert in React development with TypeScript, hooks, and modern patterns
+- **🌐 Web Scraping**: Clone and convert websites to React projects automatically
+- **🔧 Git Integration**: Complete version control workflow (add, commit, push)
+- **📁 File Operations**: Create, read, update, delete files and directories
+- **🎨 Beautiful Terminal UI**: ASCII art header with colorful, intuitive interface
+- **⚡ Smart Responses**: Instant responses for common queries without API calls
+- **🏗️ Project Scaffolding**: Automatically creates organized project structures
+- **🔄 Modular Architecture**: Clean, maintainable, and extensible codebase
+- **⌨️ Interactive CLI**: Arrow key navigation and modern terminal experience
 
 
 
@@ -37,28 +73,43 @@ CODEX responds instantly to common queries without API calls:
 
 ## 🔧 Available Tools
 
-### Development Tools
-- `writeFile` - Create/update files with content
-- `readFile` - Read file contents
-- `deleteFile` - Delete files
-- `listDirectory` - List directory contents
-- `createDirectory` - Create directories
-- `getFileInfo` - Get file metadata and stats
+### 🔧 Development Tools
+- `writeFile({ filepath, content })` - Create/update files with content
+- `readFile({ filepath })` - Read file contents
+- `deleteFile({ filepath })` - Delete files
+- `listDirectory({ dirpath })` - List directory contents
+- `createDirectory({ dirpath })` - Create directories
+- `getFileInfo({ filepath })` - Get file metadata and stats
 
-### Search & Analysis
-- `searchInFiles` - Search for patterns in files
-- `executeCommand` - Execute terminal commands
+### ⚛️ React Development Tools
+- `createReactProject({ projectName, includeDarkMode })` - Create new React project with modern setup
+- `createTodoAppWithDarkMode({ projectName })` - Create Todo app with dark/light mode toggle
+- `runReactProject({ projectPath })` - Start React development server (npm run dev)
+- `buildReactProject({ projectPath })` - Build React project for production
+- `installReactPackage({ packageName, isDev, projectPath })` - Install packages in React project
 
-### Package Management
-- `installPackage` - Install npm packages
-- `runTests` - Run test suites
+### 🌐 Web Scraping Tools
+- `scrapeWebsite({ url, projectName, includeAssets })` - Clone websites and convert to React projects
 
-### Version Control
-- `gitCommand` - Execute git commands
+### 🔍 Search & Analysis
+- `searchInFiles({ pattern, directory, fileExtension })` - Search for patterns in files
+- `executeCommand({ command })` - Execute terminal commands
 
-### Utilities
-- `getWeatherInfo` - Get weather information
-- `getSum` - Mathematical operations
+### 📦 Package Management
+- `installPackage({ packageName, isDev })` - Install npm packages
+- `runTests({ testCommand })` - Run test suites
+
+### 🔧 Version Control (Git)
+- `gitCommand({ command })` - Execute any git command
+- `gitAdd()` - Stage all changes for commit (git add .)
+- `gitCommit({ message })` - Commit staged changes with message
+- `gitPush({ branch })` - Push commits to remote (default: main)
+- `gitStatus()` - Check repository status
+- `gitWorkflow({ message, branch })` - Complete workflow: add, commit, push
+
+### 🌤️ Utilities
+- `getWeatherInfo(city)` - Get weather information
+- `getSum({ a, b })` - Mathematical operations
 
 ## 🤖 Supported AI Models
 
