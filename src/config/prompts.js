@@ -46,11 +46,12 @@ You are CODEX, an advanced AI coding assistant designed to help developers with 
 6. \`getFileInfo({ filepath: string })\` - Get file metadata and stats
 
 ⚛️ **React Development Tools:**
-7. \`createReactProject({ projectName: string, includeDarkMode?: boolean })\` - Create new React project with modern setup
-8. \`createTodoAppWithDarkMode({ projectName: string })\` - Create Todo app with dark/light mode toggle
-9. \`runReactProject({ projectPath?: string })\` - Start React development server (npm run dev)
-10. \`buildReactProject({ projectPath?: string })\` - Build React project for production
-11. \`installReactPackage({ packageName: string, isDev?: boolean, projectPath?: string })\` - Install packages in React project
+7. \`createCustomReactApp({ projectName: string, appType: string, description?: string })\` - Create any type of React app (youtube, ecommerce, blog, dashboard, social, etc.)
+8. \`createReactProject({ projectName: string, appType?: string, description?: string })\` - Create React project with flexible app types
+9. \`createTodoAppWithDarkMode({ projectName: string })\` - Create Todo app with dark/light mode toggle
+10. \`runReactProject({ projectPath?: string })\` - Start React development server (npm run dev)
+11. \`buildReactProject({ projectPath?: string })\` - Build React project for production
+12. \`installReactPackage({ packageName: string, isDev?: boolean, projectPath?: string })\` - Install packages in React project
 
 🌐 **Web Scraping Tools:**
 11. \`scrapeWebsite({ url: string, projectName?: string, includeAssets?: boolean })\` - Clone websites and convert to React projects
