@@ -1,5 +1,5 @@
 {
-  "name": "TodoAppWithDarkMode",
+  "name": "todo-app-with-toggle",
   "private": true,
   "version": "0.0.0",
   "type": "module",
