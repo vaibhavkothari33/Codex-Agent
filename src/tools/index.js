@@ -4,6 +4,7 @@ import { utilityTools } from './utilityTools.js';
 import { webScrapingTools } from './webScrapingTools.js';
 import { reactTools } from './reactTools.js';
 import { gitTools } from './gitTools.js';
+import { imageTools } from './imageTools.js';
 
 // Combine all tools into a single map
 export const TOOLS_MAP = {
@@ -12,5 +13,6 @@ export const TOOLS_MAP = {
     ...utilityTools,
     ...webScrapingTools,
     ...reactTools,
-    ...gitTools
+    ...gitTools,
+    ...imageTools
 };

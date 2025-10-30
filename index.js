@@ -12,6 +12,7 @@ async function main() {
     await printHeader();
     
     const rl = createReadlineInterface();
+    const sessionId = `session-${Date.now()}`;
     
     printWelcome();
 
@@ -66,7 +67,7 @@ async function main() {
             }
 
             // Process complex queries with AI
-            await processQuery(userQuery);
+            await processQuery(userQuery, sessionId);
 
         } catch (error) {
             console.log(chalk.red('❌ An error occurred: ' + error.message));

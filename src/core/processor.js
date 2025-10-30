@@ -4,8 +4,14 @@ import { TOOLS_MAP } from '../tools/index.js';
 import { SYSTEM_PROMPT } from '../config/prompts.js';
 import { getModelInfo, getCurrentModel } from '../config/models.js';
 import { printThinking, printAction, printObserve, printOutput } from '../ui/display.js';
+import { appendToHistory } from '../ai/memory.js';
+import { printLastCallSummary, printSessionTotals, initSessionTotals } from '../ai/costTracker.js';
+import { getCompiledGraph } from '../ai/graph.js';
 
-export async function processQuery(userQuery) {
+export async function processQuery(userQuery, sessionId = 'default') {
+    initSessionTotals(sessionId);
+    // Initialize LangGraph (compiled instance, currently used as state container)
+    getCompiledGraph();
     const messages = [
         {
             role: "system",
@@ -25,24 +31,34 @@ export async function processQuery(userQuery) {
     console.log(chalk.gray('─'.repeat(60)));
     console.log();
 
+    let firstIteration = true;
     while (true) {
         try {
-            const responseContent = await callAI(messages);
+            // Persist incoming user message only once per top-level turn
+            if (firstIteration) {
+                await appendToHistory(sessionId, 'user', userQuery);
+            }
+
+            const responseContent = await callAI(messages, sessionId);
 
             messages.push({
                 role: 'assistant',
                 content: responseContent,
             });
+            await appendToHistory(sessionId, 'assistant', responseContent);
 
             const parsed_response = JSON.parse(responseContent);
 
             if (parsed_response.step === "think") {
                 printThinking(parsed_response.content);
+                printLastCallSummary(sessionId);
                 continue;
             }
 
             if (parsed_response.step === "output") {
                 printOutput(parsed_response.content);
+                printLastCallSummary(sessionId);
+                printSessionTotals(sessionId);
                 break;
             }
 
@@ -64,8 +80,10 @@ export async function processQuery(userQuery) {
                     role: "assistant",
                     content: JSON.stringify({ step: "observe", content: value }),
                 });
+                await appendToHistory(sessionId, 'assistant', JSON.stringify({ step: 'observe', content: value }));
                 continue;
             }
+            firstIteration = false;
         } catch (error) {
             console.log(chalk.red('❌ Error: ' + error.message));
             if (error.message.includes('API key')) {
